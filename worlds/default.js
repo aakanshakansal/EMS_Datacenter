@@ -23,12 +23,29 @@ export function init(Constants) {
   Constants.UserBehaviorModules = [
     "lights.js",
     "names.js",
-    // "server.js",
     "highlight.js",
-    // "hinge.js",
-    // "guiFunctionality.js",
     "serverGraph.js",
+    "hinge.js",
   ];
+
+  const avatarModels = [
+    "3kDNEN2jKhiPYcYAfItpXCcaahDmYM54K-kP6mKb_x8AAx8fGxhRREQNAgcOGEUeGEUIGQQaHg4fRQIERB5ELA89CRIHIhgqADoIKTMPWCwTCh0SHD4gPDIyWUQCBEUIGQQaHg4fRQYCCBkEHQ4ZGA5EEgMHOzsPIC46GCoaMxsfOjwhBCIuWxM8XzwZHjpfND8JIw4cBQ8oXi8lOkQPCh8KRD0aDSQSEjkvICQ5BQM6Xi1GHhk9OglGOAcDBw0CHAEYD1wkKR0PITNGDBg",
+    "3qPM9OnJ8B8G-bx-DZtT_uk55iJ-4seqH4D_N7XJcmxMGQUFAQJLXl4XGB0UAl8EAl8SAx4ABBQFXxgeXgReNhUnEwgdOAIwGiASMykVQjYJEAcIBiQ6JigoQ14YHl8SAx4ABBQFXxwYEgMeBxQDAhReCBkdISEVOjQgAjAAKQEFICY7Hjg0QQkmRSYDBCBFLiUTORQGHxUyRDU_IF4VEAUQXjwFBSNHOj4rAgIbNz8COSEnFTUFCD4gJD4gKTIkRQZEGi42CRQAKDk8MAY",
+    "3pOqrArMCIRUilNQ5kh5jDQpDI9rMSWBMf3S8zPNUX4gGAQEAANKX18WGRwVA14FA14TAh8BBRUEXhkfXwVfNxQmEgkcOQMxGyETMigUQzcIEQYJByU7JykpQl8ZH14TAh8BBRUEXh0ZEwIfBhUCAxVfCRgcICAUOzUhAzEBKAAEISc6Hzk1QAgnRCcCBSFELyQSOBUHHhQzRTQ-IV8UEQQRXxEIHEcpEkc-IDIKSDRIFgo7RwdJNUM_Ej4-FyhGChwfPD1DM0QIMSAcNjE",
+    "3YrnwoVTORoxhAZDdVvJXzOO62FQKMuP7C2JaVRcRhXMMS0tKSpjdnY_MDU8KncsKnc6KzYoLDwtdzA2dix2Hj0POyA1ECoYMgg6GwE9ah4hOC8gLgwSDgAAa3YwNnc6KzYoLDwtdzQwOis2LzwrKjx2IDE1CQk9EhwIKhgoASktCA4TNhAcaSEObQ4rLAhtBg07ETwuNz0abB0XCHY9OC04dhg4FmA1Dho2KBNhGGh0YSg1ETcqDhoDNy07OGgJODMbHD4JHTNoMhFoPDI",
+    "3B45okYnR2Z096wkAU7ACqQg7iGeh5lcva8FNB-RZ-sgKjY2MjF4bW0kKy4nMWw3MWwhMC0zNyc2bCstbTdtBSYUIDsuCzEDKRMhABomcQU6IzQ7NRcJFRsbcG0rLWwhMC0zNyc2bC8rITAtNCcwMSdtOyouEhImCQcTMQMzGjI2ExUILQsHcjoVdhUwNxN2HRYgCic1LCYBdwYME20mIzYjbRc1BHcpdQcrIDsWBDs6ehY2Eht2Fxd6cBAxKCUzNnMQHRgUCggKcAUgHQ8",
+    "3qPM9OnJ8B8G-bx-DZtT_uk55iJ-4seqH4D_N7XJcmxMGQUFAQJLXl4XGB0UAl8EAl8SAx4ABBQFXxgeXgReNhUnEwgdOAIwGiASMykVQjYJEAcIBiQ6JigoQ14YHl8SAx4ABBQFXxwYEgMeBxQDAhReCBkdISEVOjQgAjAAKQEFICY7Hjg0QQkmRSYDBCBFLiUTORQGHxUyRDU_IF4VEAUQXjwFBSNHOj4rAgIbNz8COSEnFTUFCD4gJD4gKTIkRQZEGi42CRQAKDk8MAY",
+  ];
+
+  Constants.AvatarNames = avatarModels.map((dataLocation, i) => ({
+    type: "3d",
+    name: `Visitor ${i + 1}`,
+    modelType: "glb",
+    avatarType: "wonderland",
+    dataLocation,
+    dataRotation: [0, Math.PI, 0],
+    dataScale: [0.3, 0.3, 0.3],
+  }));
 
   Constants.DefaultCards = [
     {
@@ -45,19 +62,6 @@ export function init(Constants) {
         placeholderOffset: [0, 0, 0],
       },
     },
-    // {
-    //   card: {
-    //     name: "light",
-    //     layers: ["light"],
-    //     type: "lighting",
-    //     behaviorModules: ["Light"],
-    //     dataLocation:
-    //       "3OF2-s4U1ZOJduGATmLEIXo1iTkQHd5ZBknKgL5SvqpQJzs7Pzx1YGApJiMqPGE6PGEsPSA-Oio7YSYgYDpgCCsZLTYjBjwOJB4sDRcrfAg3Ljk2OBoEGBYWfWAmIGEsPSA-Oio7YSImLD0gOSo9PCpgPwB9AAIIISx8YiYneScqKyQaIisNLHkaGT8YKg56JQwQfHstPiNiGQ49e2ArLjsuYCMBPgMiCQt3OQskGhcleSp9HQIIfXseHgo7EAo9CB48FRwpegsCLH4OIwY",
-    //     fileName: "/abandoned_parking_4k.jpg",
-    //     dataType: "jpg",
-    //     toneMappingExposure: 1.2,
-    //   },
-    // },
     {
       card: {
         name: "world model",
@@ -72,27 +76,12 @@ export function init(Constants) {
           2.14248427342754574, 2.14248427342754574, 2.14248427342754574,
         ],
         name: "/Server_Room.v1 (3).glb",
-        // temp1
-
-        // dataLocation: "3AYk8iYB3-EC2aa8tXyo8KwQ6i92t1PlzHBBv4LJRAPIKTU1MTJ7bm4nKC0kMm80Mm8iMy4wNCQ1bygubjRuOxQ1NhEOOwc0DhJwCigmDBsodHJ4OQcFBnlxc24oLm8iMy4wNCQ1bywoIjMuNyQzMiRvLS4iIC0lJDclJCcgNC01bg8kCQIsKCI2cw4SKyswCy8xBGwzJxsgLQsJeRUGLggkLzgOBTsDbAckC3FuJSA1IG4vLBU5Bjk3LRN3eCx0FwdycStyOwcVchgCdTMHdTMLGA94CRgmbBIuDTs2",
-        // temp
-        dataLocation: "../assets/Server_Room_New (14).glb",
+        dataLocation: "../assets/Server_Room_New (15).glb",
         behaviorModules: ["Highlight", "ServerInfo"],
-        //   "3QyuIgmSRrUTOpWn4W6J8WA2kOQvqjh4yCTUiw_AcgZ0OSUlISJrfn43OD00In8kIn8yIz4gJDQlfzg-fiR-KwQlJgEeKxckHgJgGjg2HAs4ZGJoKRcVFmlhY344Pn8yIz4gJDQlfzw4MiM-JzQjIjR_PT4yMD01NCc1NDcwJD0lfmAQKRMCGSgEMGAfOQE_OiU8NWFhaAcbHjg7YD46IR8bNztoARYOOGQdKxB-NTAlMH4-A2kSIiErMgQyZgEANQAmBig7MAMhaAc0BhskZjoiKDQnMDRlAjgeHStp",
-
-        // behaviorModules: [
-        //   "GuiFunctionality",
-        //   "ServerInfo",
-        //   "TialObject",
-        //   "Highlight",
-        // ],
-        // "ServerInfo",
-        // "TialObject"
-        // Gui
-        // Highlight
         fullBright: false,
         placeholder: true,
         placeholderSize: [400, 0.1, 400],
+
         placeholderColor: 0x808080,
         placeholderOffset: [0, 0, 0],
       },
@@ -117,9 +106,9 @@ export function init(Constants) {
         name: "entrance",
         type: "object",
         translation: [
-          0.9523000197314464, -0.14595834442125688, 8.863921777540416,
+          8.122586733025857, -0.19401244752010927, 15.885658755018573,
         ],
-        rotation: [0, 0.3440628632260013, 0, 0.9389466151750726],
+        rotation: [0, -0.1510499317349649, 0, 0.988526134263967],
         spawn: "default",
         behaviorModules: ["Names"],
       },

@@ -133,44 +133,6 @@ class HighlightPawn extends PawnBehavior {
     return false;
   }
 
-  // isInSkippedRange(object) {
-  //   // Define top-level skipped child index ranges
-  //   const skippedRanges = [
-  //     { start: 0, end: 2 },
-  //     { start: 135, end: 148 },
-  //   ];
-
-  //   // Check if object is in any skipped top-level range
-  //   for (const range of skippedRanges) {
-  //     for (let i = range.start; i <= range.end; i++) {
-  //       const parent = this.objectHighlight.children[i];
-  //       if (!parent) continue;
-  //       if (object === parent || this.isDescendantOf(parent, object)) {
-  //         return true;
-  //       }
-  //     }
-  //   }
-
-  //   // Check subchildren 0 and 13–15 inside each child
-  //   for (let child of this.objectHighlight.children) {
-  //     if (!child || !child.children) continue;
-
-  //     for (let i = 0; i < child.children.length; i++) {
-  //       const subchild = child.children[i];
-  //       if (!subchild) continue;
-
-  //       // Skip subchild 0 and 13-15
-  //       if (i === 0 || (i >= 13 && i <= 15)) {
-  //         if (object === subchild || this.isDescendantOf(subchild, object)) {
-  //           return true;
-  //         }
-  //       }
-  //     }
-  //   }
-
-  //   return false; // Otherwise, allow
-  // }
-
   highlightObject(object) {
     if (!this.originalMaterialsHighlight.has(object)) {
       this.originalMaterialsHighlight.set(object, object.material.clone());
@@ -198,17 +160,3 @@ export default {
     },
   ],
 };
-
-// model.children.forEach((child, index) => {
-//   if ((index >= 0 && index <= 4) || (index >= 16 && index <= 70)) {
-//     child.children.forEach((subchild, subIndex) => {
-//       if (subIndex >= 1 && subIndex <= 12) {
-//         subchild.children.forEach((SsubChild, Ssubindex) => {
-//           if (Ssubindex >= 0 && Ssubindex <= 1) {
-//             allowedObjects.add(SsubChild);
-//           }
-//         });
-//       }
-//     });
-//   }
-// });
