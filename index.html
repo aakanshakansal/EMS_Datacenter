@@ -19,21 +19,38 @@
 <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <style>
-  #serverInfo {
+  #rackInfo {
     position: absolute;
     display: none;
-    padding: 1px;
+    top: 66px !important;
+    z-index: 1000;
+    font-size: 14px;
+    color: black;
+    width: auto;
+    height: auto;
+    left: 10px !important;
+    line-height: 0.5;
+    padding: 5px;
+    border: 0.2px solid #ccc;
+  }
+  #serverInfo{
+    color: black;
+    padding: 5px;
+    border: 0.2px solid #ccc;
+    position: absolute;
+    display: none;
     top: 66px !important;
     z-index: 1000;
     font-size: 14px;
     width: auto;
     height: auto;
-    left: 5px !important;
+    left: 10px !important;
     line-height: 0.5;
   }
 </style>
 </head>
 <body class="no-select" style="position: relative;">
+   <div id="rackInfo"></div>
    <div id="serverInfo"></div>
 </body>
 </html>

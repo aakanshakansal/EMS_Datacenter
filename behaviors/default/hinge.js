@@ -39,7 +39,6 @@ class HingeActor {
 
 class HingePawn {
   setup() {
-    // the 3D object will likely not be loaded yet.
     this.subscribe(this.id, "3dModelLoaded", "modelLoaded");
   }
 
@@ -50,10 +49,6 @@ class HingePawn {
         obj.renderOrder = 1001;
       }
     });
-    //}
-    //console.log("Hinge", this.object)
-
-    // this.listen("updateWorld", this.update);
   }
 }
 
