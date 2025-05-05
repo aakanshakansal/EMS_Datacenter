@@ -30,12 +30,12 @@ class HighlightPawn extends PawnBehavior {
     this.objectHighlight.children.forEach((child, index) => {
       if (!this.isInSkippedRange(child)) {
         // Skip objects in the skipped range
-        this.allowedObjectsHighlight.add(child);
-        // child.children.forEach((subchild, subIndex) => {
-        //   if (subIndex >= 0 && subIndex <= 14) {
-        //     this.allowedObjectsHighlight.add(subchild);
-        //   }
-        // });
+        // this.allowedObjectsHighlight.add(child);
+        child.children.forEach((subchild, subIndex) => {
+          if (subIndex >= 0 && subIndex <= 14) {
+            this.allowedObjectsHighlight.add(subchild);
+          }
+        });
       }
     });
 
@@ -44,6 +44,61 @@ class HighlightPawn extends PawnBehavior {
       this.allowedObjectsHighlight
     );
   }
+
+  // onTap(event) {
+  //   console.log("HighlightPawn onDocumentMouseClick");
+
+  //   let avatar = this.getMyAvatar();
+  //   let raycaster = avatar.setRaycastFrom2D(event.xy);
+
+  //   // Intersect only with allowed objects
+  //   const intersects = raycaster.intersectObjects(
+  //     Array.from(this.allowedObjectsHighlight),
+  //     true
+  //   );
+
+  //   if (intersects.length > 0) {
+  //     const clickedObjectHighlight = intersects[0].object;
+  //     console.log("Clicked Object:", clickedObjectHighlight);
+  //     console.log("Clicked Object Name:", clickedObjectHighlight.name);
+
+  //     // Check if the clicked object is in the skipped range
+  //     if (this.isInSkippedRange(clickedObjectHighlight)) {
+  //       console.log(
+  //         "Clicked object is in the skipped range and will be skipped."
+  //       );
+  //       return;
+  //     }
+
+  //     // Highlight logic
+  //     if (this.highlightedObject === clickedObjectHighlight) {
+  //       this.resetObjectMaterial(clickedObjectHighlight);
+  //       // this.stopSpeaking();
+  //       this.highlightedObject = null;
+  //       console.log("Highlight reset on the same object.");
+  //     } else {
+  //       if (this.highlightedObject) {
+  //         this.resetObjectMaterial(this.highlightedObject);
+  //         // this.stopSpeaking();
+  //         console.log("Previous highlight reset:", this.highlightedObject.name);
+  //       }
+
+  //       this.highlightObject(clickedObjectHighlight);
+  //       // this.speakObjectByName(clickedObjectHighlight.name);
+  //       this.highlightedObject = clickedObjectHighlight;
+  //       console.log("Object is highlighted.");
+  //     }
+
+  //     this.say("clicked", { clickedObjectName: clickedObjectHighlight.name });
+  //   } else {
+  //     // Reset highlight if no object is clicked
+  //     if (this.highlightedObject) {
+  //       this.resetObjectMaterial(this.highlightedObject);
+  //       // this.stopSpeaking();
+  //       this.highlightedObject = null;
+  //     }
+  //   }
+  // }
 
   onTap(event) {
     console.log("HighlightPawn onDocumentMouseClick");
@@ -62,6 +117,12 @@ class HighlightPawn extends PawnBehavior {
       console.log("Clicked Object:", clickedObjectHighlight);
       console.log("Clicked Object Name:", clickedObjectHighlight.name);
 
+      // Skip highlighting for Door Hinge
+      if (clickedObjectHighlight.name.toLowerCase().includes("Door_Hinge")) {
+        console.log("Clicked object is 'Door Hinge' – ignoring.");
+        return;
+      }
+
       // Check if the clicked object is in the skipped range
       if (this.isInSkippedRange(clickedObjectHighlight)) {
         console.log(
@@ -73,18 +134,15 @@ class HighlightPawn extends PawnBehavior {
       // Highlight logic
       if (this.highlightedObject === clickedObjectHighlight) {
         this.resetObjectMaterial(clickedObjectHighlight);
-        // this.stopSpeaking();
         this.highlightedObject = null;
         console.log("Highlight reset on the same object.");
       } else {
         if (this.highlightedObject) {
           this.resetObjectMaterial(this.highlightedObject);
-          // this.stopSpeaking();
           console.log("Previous highlight reset:", this.highlightedObject.name);
         }
 
         this.highlightObject(clickedObjectHighlight);
-        // this.speakObjectByName(clickedObjectHighlight.name);
         this.highlightedObject = clickedObjectHighlight;
         console.log("Object is highlighted.");
       }
@@ -94,7 +152,6 @@ class HighlightPawn extends PawnBehavior {
       // Reset highlight if no object is clicked
       if (this.highlightedObject) {
         this.resetObjectMaterial(this.highlightedObject);
-        // this.stopSpeaking();
         this.highlightedObject = null;
       }
     }

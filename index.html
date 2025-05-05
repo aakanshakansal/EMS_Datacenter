@@ -18,39 +18,53 @@
 <script src="https://code.highcharts.com/modules/heatmap.js"></script>
 <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
 <style>
   #rackInfo {
-    position: absolute;
-    display: none;
-    top: 66px !important;
-    z-index: 1000;
-    font-size: 14px;
-    color: black;
-    width: auto;
-    height: auto;
-    left: 10px !important;
-    line-height: 0.5;
-    padding: 5px;
-    border: 0.2px solid #ccc;
-  }
-  #serverInfo{
-    color: black;
-    padding: 5px;
-    border: 0.2px solid #ccc;
-    position: absolute;
-    display: none;
-    top: 66px !important;
-    z-index: 1000;
-    font-size: 14px;
-    width: auto;
-    height: auto;
-    left: 10px !important;
-    line-height: 0.5;
-  }
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: none;
+  top: 66px !important;
+  left: 5px;
+  z-index: 1000;
+  border: 1px solid #ccc;
+  height: 280px !important;
+  width: 400px !important; 
+  color: black;
+  line-height: 9px;
+}
+#serverInfo,#switchInfo {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: none;
+  top: 66px !important;
+  left: 5px;
+  z-index: 1000;
+  border: 1px solid #ccc;
+  height: 190px !important;
+  width: 400px !important; 
+  color: black;
+  line-height: 9px;
+}
+
+#rackChart, #severChart, #switchChart {
+  height: 300px !important; 
+  border: 1px solid #ccc;
+}
+
 </style>
 </head>
 <body class="no-select" style="position: relative;">
-   <div id="rackInfo"></div>
-   <div id="serverInfo"></div>
+   <div id="rackInfo">
+   <div id="rackChart" ></div>
+   </div>
+   <div id="serverInfo">
+    <div id="severChart" ></div>
+   </div>
+
+    <div id="switchInfo">
+      <div id="switchChart" ></div>
+      </div>
 </body>
 </html>

@@ -82,9 +82,6 @@ class ServerInfoPawn {
         this.serverinfo(clickedObjectServer);
       } else {
         for (let i = 3; i <= 134; i++) {
-          //   if (i >= 5 && i <= 15) {
-          //     continue;
-          //   } else {
           for (let j = 1; j <= 12; j++) {
             if (j === 0) continue;
 
