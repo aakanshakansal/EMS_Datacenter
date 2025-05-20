@@ -71,7 +71,7 @@ export function init(Constants) {
         layers: [ "walk","pointer"],
         behaviorModules: ["Highlight", "ServerInfo", "Names", "Cabinet"],
         name: "/Server_Room_01_05_V5.glb",
-        dataLocation: "../assets/Server_Rack_20-05 (4).glb",
+        dataLocation: "../assets/Server_Rack_20-05 (5).glb",
         dataScale: [2.1424842734275455, 2.1424842734275455, 2.1424842734275455],
         fullBright: false,
         modelType: "glb",
