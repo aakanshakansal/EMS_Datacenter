@@ -68,11 +68,10 @@ export function init(Constants) {
       card: {
         translation: [0, -1.4206813794726825, 0],
         rotation: [0, 0, 0, 1],
-        layers: ["walk", "pointer"],
+        layers: [ "walk","pointer"],
         behaviorModules: ["Highlight", "ServerInfo", "Names", "Cabinet"],
         name: "/Server_Room_01_05_V5.glb",
-        // dataLocation: "../assets/Server_Room_W_OGlass_hinge.glb",
-        dataLocation: "../assets/Server_Room_01_05_V5.glb",
+        dataLocation: "../assets/Server_Rack_20-05 (4).glb",
         dataScale: [2.1424842734275455, 2.1424842734275455, 2.1424842734275455],
         fullBright: false,
         modelType: "glb",
@@ -188,37 +187,14 @@ export function init(Constants) {
     },
     {
       card: {
-        translation: [
-          8.199494055247747, 0.8662857490129259, -11.095027673536274,
-        ],
-        scale: [4, 4, 4],
-        rotation: [0, 0.010010787000894897, 0, 0.9999498908163462],
-        layers: ["walk", "pointer"],
-        singleSided: true,
-        shadow: true,
-        translation: [0, -1.5, 0],
-        rotation: [0, 0, 0],
-        type: "3d",
-        modelType: "glb",
-        name: "/Server_Room.v1 (3).glb",
-        dataLocation: "../assets/Door.glb",
-        fullBright: false,
-        placeholder: true,
-        placeholderSize: [400, 0.1, 400],
-
-        placeholderColor: 0x808080,
-        placeholderOffset: [0, 0, 0],
-      },
-    },
-
-    {
-      card: {
         name: "entrance",
         type: "object",
-        translation: [
-          8.122586733025857, -0.19401244752010927, 15.885658755018573,
-        ],
-        rotation: [0, -0.1510499317349649, 0, 0.988526134263967],
+        translation: [50.799147301991134, 0.43336315354068455, 10.98488108544026],
+        rotation: [0, 0.7067985592659645, 0, 0.7074148688143026],
+        // translation: [
+        //   8.122586733025857, -0.19401244752010927, 15.885658755018573,
+        // ],
+        // rotation: [0, -0.1510499317349649, 0, 0.988526134263967],
         spawn: "default",
         behaviorModules: ["Names"],
       },

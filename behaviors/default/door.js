@@ -41,8 +41,8 @@ class CabinetPawn {
       scale: [2.1617669989865185, 2.1617669989865185, 2.1617669989865185],
       type: "3d",
       modelType: "glb",
-      fileName: "/Door.glb",
-      dataLocation: "../../assets/Door.glb",
+      fileName: "/Door1.glb",
+      dataLocation: "../../assets/Door1.glb",
       behaviorModules: ["Hinge"],
     });
   }

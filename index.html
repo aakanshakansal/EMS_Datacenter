@@ -6,65 +6,77 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   <title>Microverse</title>
   <link id="microverse-css" rel="stylesheet" href="./assets/css/microverse.css" />
-<script defer src="lib/index-3bb4cf50.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/DRACOLoader.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
-<script src="https://code.highcharts.com/modules/heatmap.js"></script>
-<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script defer src="lib/index-3bb4cf50.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/DRACOLoader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-more.js"></script>
+  <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+  <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 
-<style>
-  #rackInfo {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.4);
-  display: none;
-  top: 66px !important;
-  left: 5px;
-  z-index: 1000;
-  border: 1px solid #ccc;
-  height: 280px !important;
-  width: 400px !important; 
-  color: black;
-  line-height: 9px;
-}
-#serverInfo,#switchInfo {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.4);
-  display: none;
-  top: 66px !important;
-  left: 5px;
-  z-index: 1000;
-  border: 1px solid #ccc;
-  height: 190px !important;
-  width: 400px !important; 
-  color: black;
-  line-height: 9px;
-}
+  <style>
+    #rackInfo {
+      position: absolute;
+      padding: 5px;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.4);
+      display: none;
+      top: 66px !important;
+      left: 5px;
+      z-index: 1000;
+      border: 1px solid #ccc;
+      height: 240px !important;
+      width: 400px !important;
+      color: black;
+      line-height: 8px;
+    }
 
-#rackChart, #severChart, #switchChart {
-  height: 300px !important; 
-  border: 1px solid #ccc;
-}
+    #serverInfo,
+    #switchInfo {
+      position: absolute;
+      padding: 5px;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.4);
+      display: none;
+      top: 66px !important;
+      left: 5px;
+      z-index: 1000;
+      border: 1px solid #ccc;
+      height: 170px !important;
+      width: 400px !important;
+      color: black;
+      line-height: 9px;
+    }
 
-</style>
+    #rackChart,
+    #severChart,
+    #switchChart {
+      height: 300px !important;
+      width: 400px !important;
+      border: 1px solid #ccc;
+      padding: 5px;
+      left: 5px;
+    }
+  </style>
 </head>
-<body class="no-select" style="position: relative;">
-   <div id="rackInfo">
-   <div id="rackChart" ></div>
-   </div>
-   <div id="serverInfo">
-    <div id="severChart" ></div>
-   </div>
 
-    <div id="switchInfo">
-      <div id="switchChart" ></div>
-      </div>
+<body class="no-select" style="position: relative;">
+  <div id="rackInfo">
+    <div id="rackChart"></div>
+  </div>
+  <div id="serverInfo">
+    <div id="severChart"></div>
+  </div>
+
+  <div id="switchInfo">
+    <div id="switchChart"></div>
+  </div>
 </body>
+
 </html>
